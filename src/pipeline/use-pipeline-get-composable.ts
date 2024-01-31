@@ -10,10 +10,10 @@ export function usePipelineGetComposable<
   TResponse,
   TArgs extends unknown[],
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
   method: Method<TResponse, TArgs>,
   defaultConfig?: ExecutionConfig<TResponse, TArgs>,
 ) {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs>>) => () =>
-    referenceFn(method, { ...defaultConfig, ...config });
+    composableBuilder(method, { ...defaultConfig, ...config });
 }

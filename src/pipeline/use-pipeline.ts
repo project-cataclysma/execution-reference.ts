@@ -19,36 +19,36 @@ export function usePipeline<
   TResponse,
   TArgs extends unknown[],
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
   method: Method<TResponse, TArgs>,
   defaultConfig?: ExecutionConfig<TResponse, TArgs>,
 ): Pipeline<TReference, TResponse, TArgs> {
-  const get = usePipelineGetComposable(referenceFn, method, defaultConfig);
+  const get = usePipelineGetComposable(composableBuilder, method, defaultConfig);
   const execute = usePipelineExecuteComposable(
-    referenceFn,
+    composableBuilder,
     method,
     defaultConfig,
   );
   const status = usePipelineStatusComposable(
-    referenceFn,
+    composableBuilder,
     method,
     defaultConfig,
   );
 
   if (isMethodWithParameters(method)) {
     const reactive = usePipelineReactiveComposable(
-      referenceFn,
+      composableBuilder,
       method,
       defaultConfig,
     );
     const value = usePipelineValueComposable(
-      referenceFn,
+      composableBuilder,
       method,
       defaultConfig,
     );
-    const form = usePipelineFormComposable(referenceFn, method, defaultConfig);
+    const form = usePipelineFormComposable(composableBuilder, method, defaultConfig);
     const values = usePipelineValuesComposable(
-      referenceFn,
+      composableBuilder,
       method,
       defaultConfig,
     );

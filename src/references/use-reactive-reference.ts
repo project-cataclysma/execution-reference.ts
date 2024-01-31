@@ -12,12 +12,12 @@ export function useReactiveReference<
   TArg,
   TArgs extends unknown[],
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
   method: Method<TResponse, [arg: TArg, ...args: TArgs]>,
   configuration: ExecutionConfig<TResponse, TArgs>,
   arg: MaybeRef<TArg>,
 ): ExecutionReference<TResponse, TArgs> {
-  return referenceFn(
+  return composableBuilder(
     (...args: TArgs) => method(toValue(arg), ...args),
     configuration,
   );

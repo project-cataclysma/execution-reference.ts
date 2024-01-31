@@ -12,14 +12,14 @@ export function usePipelineStatusComposable<
   TResponse,
   TArgs extends unknown[],
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
   method: Method<TResponse, TArgs>,
   defaultConfig?: ExecutionConfig<TResponse, TArgs>,
 ) {
   return <TResult, TError extends Error = Error>(
     config?: Partial<StatusConfig<TResult, TResponse, TArgs, TError>>,
   ) => {
-    return useStatusComposable(referenceFn, method, {
+    return useStatusComposable(composableBuilder, method, {
       ...defaultConfig,
       ...config,
     });

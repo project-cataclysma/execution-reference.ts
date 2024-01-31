@@ -15,7 +15,7 @@ export function useStatusReference<
   TArgs extends unknown[],
   TError extends Error,
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
   method: Method<TResponse, TArgs>,
   configuration?: StatusConfig<TResult, TResponse, TArgs, TError>,
 ): StatusReference<TResult, TReference, TResponse, TArgs, TError> {
@@ -69,7 +69,7 @@ export function useStatusReference<
     }
   };
 
-  const reference = referenceFn(method, configuration);
+  const reference = composableBuilder(method, configuration);
   return {
     error,
     status,

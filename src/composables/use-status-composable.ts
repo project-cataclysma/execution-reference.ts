@@ -11,12 +11,12 @@ export function useStatusComposable<
   TArgs extends unknown[],
   TError extends Error,
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
-  action: Method<TResponse, TArgs>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
+  method: Method<TResponse, TArgs>,
   defaultConfig: StatusConfig<TResult, TResponse, TArgs, TError>,
 ): StatusComposable<TResult, TReference, TResponse, TArgs, TError> {
   return (config?: Partial<StatusConfig<TResult, TResponse, TArgs, TError>>) =>
-    useStatusReference(referenceFn, action, {
+    useStatusReference(composableBuilder, method, {
       ...defaultConfig,
       ...config,
     });

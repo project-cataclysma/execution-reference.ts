@@ -8,12 +8,12 @@ export function useExecutionComposable<
   TResponse,
   TArgs extends unknown[],
 >(
-  action: Method<TResponse, TArgs>,
-  defaultConfig: TConfig,
+  method: Method<TResponse, TArgs>,
+  config: TConfig,
 ): ExecutionComposable<TResponse, TArgs> {
   return (config?: Partial<TConfig>) =>
-    useExecutionReference(action, {
-      ...defaultConfig,
+    useExecutionReference(method, {
+      ...config,
       ...config,
     });
 }

@@ -12,15 +12,15 @@ export function useValuesComposable<
   TArgs extends unknown[],
   TError extends Error,
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
-  action: Method<TResponse, [...arg: TArg, ...args: TArgs]>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
+  method: Method<TResponse, [...arg: TArg, ...args: TArgs]>,
   defaultConfig: ExecutionConfig<TResponse, TArgs, TError>,
   ...arg: TArg
 ): ExecutionComposable<TResponse, TArgs> {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs, TError>>) =>
     useValuesReference(
-      referenceFn,
-      action,
+      composableBuilder,
+      method,
       {
         ...defaultConfig,
         ...config,

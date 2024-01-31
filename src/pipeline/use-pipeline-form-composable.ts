@@ -12,10 +12,10 @@ export function usePipelineFormComposable<
   TArgs extends [p0: unknown, ...pn: PN],
   PN extends unknown[],
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, PN>,
+  composableBuilder: ComposableBuilder<TReference, TResponse, PN>,
   method: Method<TResponse, TArgs>,
   defaultConfig?: ExecutionConfig<TResponse, PN>,
 ) {
   return (arg: TArgs[0]) =>
-    useFormComposable(referenceFn, method, defaultConfig, arg);
+    useFormComposable(composableBuilder, method, defaultConfig, arg);
 }

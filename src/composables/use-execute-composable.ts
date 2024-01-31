@@ -10,10 +10,10 @@ export function useExecuteComposable<
   TResponse,
   TArgs extends unknown[],
 >(
-  referenceFn: ComposableBuilder<TReference, TResponse, TArgs>,
-  action: Method<TResponse, TArgs>,
-  defaultConfig: TConfig,
+  composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
+  method: Method<TResponse, TArgs>,
+  config: TConfig,
 ): ExecuteComposable<TResponse, TArgs> {
   return (...args: TArgs) =>
-    useExecuteReference(referenceFn, action, defaultConfig, ...args);
+    useExecuteReference(composableBuilder, method, config, ...args);
 }

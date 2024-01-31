@@ -12,7 +12,7 @@ export function usePipelineValuesComposable<
   TPI extends unknown[],
   TPF extends unknown[],
 >(
-  referenceFn: ComposableBuilder<
+  composableBuilder: ComposableBuilder<
     TReference,
     TResponse,
     [...pi: TPI, ...pf: TPF]
@@ -22,7 +22,7 @@ export function usePipelineValuesComposable<
 ) {
   return (...pi: TPI) =>
     useValuesComposable(
-      referenceFn,
+      composableBuilder,
       (...pf: TPF) => method(...pi, ...pf),
       defaultConfig,
     );
