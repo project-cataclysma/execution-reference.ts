@@ -11,7 +11,7 @@ The type `Pipeline` has a few defaault pipeline-methods such as status, value, v
 
 What does all of this mean?
 
-* pipeline-methods are properties of the pipeline, which will wrap the old pipeline into a new one, with modified behavior. For example, the value method will inject a parameter, returning a new pipeline that does not need that parameter.
-* pipeline-endpoints are properties of the pipeline, which will return a composable. For example, the get endpoint will return a composable, which will require the remaining parameters to execute.
+- pipeline-methods are properties of the pipeline, which will wrap the old pipeline into a new one, with modified behavior. For example, the value method will inject a parameter, returning a new pipeline that does not need that parameter.
+- pipeline-endpoints are properties of the pipeline, which will return a composable. For example, the get endpoint will return a composable, which will require the remaining parameters to execute.
 
 In short, use pipeline-methods to pipe data, use pipeline-endpoints to recurse into a composable.
