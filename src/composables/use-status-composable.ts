@@ -1,4 +1,4 @@
-import { useStatusReference } from "../references";
+import { useStatusReferenceBuilder } from "../references";
 import { ComposableBuilder, StatusComposable } from "../types";
 import { StatusConfig } from "../types/configs";
 import { Method } from "../types/method";
@@ -16,7 +16,7 @@ export function useStatusComposable<
   defaultConfig: StatusConfig<TResult, TResponse, TArgs, TError>,
 ): StatusComposable<TResult, TReference, TResponse, TArgs, TError> {
   return (config?: Partial<StatusConfig<TResult, TResponse, TArgs, TError>>) =>
-    useStatusReference(composableBuilder, method, {
+    useStatusReferenceBuilder(composableBuilder, method, {
       ...defaultConfig,
       ...config,
     });

@@ -1,4 +1,3 @@
-import { ComposableBuilder } from "..";
 import { ExecutionConfig } from "../configs";
 import { Method } from "../method";
 
@@ -12,12 +11,7 @@ export type ReferenceBuilder<
   TArgs extends unknown[],
   TComposableArgs extends unknown[] = [],
 > = (
-  composableBuilder: ComposableBuilder<
-    TComposable,
-    TResponse,
-    TArgs,
-    TComposableArgs
-  >,
+  composableBuilder: TComposable,
   method: Method<TResponse, TArgs>,
   configuration: ExecutionConfig<TResponse, TArgs>,
   ...composableArgs: TComposableArgs

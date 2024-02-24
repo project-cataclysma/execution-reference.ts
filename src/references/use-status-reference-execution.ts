@@ -1,9 +1,9 @@
 import { Method, ExecutionReference, StatusReference } from "../types";
 import { StatusConfig } from "../types/configs/status-config";
 import { useExecutionReference } from "./use-execution-reference";
-import { useStatusReference } from "./use-status-reference";
+import { useStatusReferenceBuilder } from "./builders/use-status-reference-builder";
 
-export function useStatusReferenceExecution<
+export function useStatusReference<
   TResult,
   TResponse,
   TArgs extends unknown[],
@@ -18,5 +18,9 @@ export function useStatusReferenceExecution<
   TArgs,
   TError
 > {
-  return useStatusReference(useExecutionReference, method, configuration);
+  return useStatusReferenceBuilder(
+    useExecutionReference,
+    method,
+    configuration,
+  );
 }

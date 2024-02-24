@@ -4,11 +4,11 @@ import {
   Method,
   ExecutionReference,
   StatusReference,
-} from "../types";
-import { StatusConfig } from "../types/configs/status-config";
-import { ExecutionStatus, ExecutionStatusType } from "../types";
+} from "../../types";
+import { StatusConfig } from "../../types/configs/status-config";
+import { ExecutionStatus, ExecutionStatusType } from "../../types";
 
-export function useStatusReference<
+export function useStatusReferenceBuilder<
   TResult,
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,

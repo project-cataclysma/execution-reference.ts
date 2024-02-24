@@ -15,3 +15,18 @@ What does all of this mean?
 - pipeline-endpoints are properties of the pipeline, which will return a composable. For example, the get endpoint will return a composable, which will require the remaining parameters to execute.
 
 In short, use pipeline-methods to pipe data, use pipeline-endpoints to recurse into a composable.
+
+# Understanding Types
+
+At the Core of this library, is the Reference Types.
+The lowest level of the reference type is the `ExecutionReference`, which gets consumed by `ValueReference` and `FormReference`
+
+This library has composables for creating references, these are called `ComposableBuilders`.
+
+`PipelineBuilders` can be setup to recurse through multple `ComposableBuilders` to create a complex Reference, such as a Reference combining `ValueReference` and `FormReference`
+
+Finally, the `Pipeline` itself is a type with methods to configure the recursive execution of `PipelineBuilders`.
+
+This means: To Create a Reference of some type, execute `use[Feature]Reference`, which is a `ComposableBuilder`.
+
+To Create a Composable for that Reference, execute `useComposableBuilder`, providing the Feature.
