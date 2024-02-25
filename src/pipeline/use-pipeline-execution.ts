@@ -5,7 +5,7 @@ import {
   Pipeline,
 } from "../types";
 import { useExecutionReference } from "../references";
-import { usePipeline } from "./use-pipeline";
+import { usePipeline } from "./use-pipeline-builder";
 
 export function usePipelineExecution<TResponse, TArgs extends unknown[]>(
   method: Method<TResponse, TArgs>,

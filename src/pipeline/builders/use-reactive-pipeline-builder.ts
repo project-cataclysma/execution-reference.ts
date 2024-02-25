@@ -6,7 +6,7 @@ import {
   Method,
 } from "../../types";
 import { PipelineValueComposable } from "../../types/pipeline/pipeline-value-composable";
-import { usePipeline } from "../use-pipeline";
+import { usePipeline } from "../use-pipeline-builder";
 
 export function useReactivePipelineBuilder<
   TReference extends ExecutionReference<TResponse, PN>,
