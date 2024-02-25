@@ -8,7 +8,7 @@ import {
 import { PipelineValueComposable } from "../../types/pipeline/pipeline-value-composable";
 import { usePipeline } from "../use-pipeline";
 
-export function usePipelineReactiveComposable<
+export function useReactivePipelineBuilder<
   TReference extends ExecutionReference<TResponse, PN>,
   TResponse,
   P1,

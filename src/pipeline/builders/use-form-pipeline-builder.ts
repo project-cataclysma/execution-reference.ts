@@ -6,7 +6,7 @@ import {
   Method,
 } from "../../types";
 
-export function usePipelineFormComposable<
+export function useFormPipelineBuilder<
   TReference extends ExecutionReference<TResponse, PN>,
   TResponse,
   TArgs extends [p0: unknown, ...pn: PN],

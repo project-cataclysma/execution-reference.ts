@@ -5,13 +5,13 @@ import {
   Pipeline,
 } from "../types";
 import { isMethodWithParameters } from "../types/method/method-with-parameters";
-import { usePipelineValuesComposable } from "./builders/use-values-pipeline-builder";
-import { usePipelineExecuteComposable } from "./builders/use-execute-pipeline-builder";
-import { usePipelineStatusComposable } from "./builders/use-status-pipeline-builder";
-import { usePipelineGetComposable } from "./builders/use-get-pipeline-builder";
-import { usePipelineValueComposable } from "./builders/use-value-pipeline-builder";
-import { usePipelineFormComposable } from "./builders/use-form-pipeline-builder";
-import { usePipelineReactiveComposable } from "./builders/use-reactive-pipeline-builder";
+import { useValuesPipelineBuilder } from "./builders/use-values-pipeline-builder";
+import { useExecutePipelineBuilder } from "./builders/use-execute-pipeline-builder";
+import { useStatusPipelineBuilder } from "./builders/use-status-pipeline-builder";
+import { useGetPipelineBuilder } from "./builders/use-get-pipeline-builder";
+import { useValuePipelineBuilder } from "./builders/use-value-pipeline-builder";
+import { useFormPipelineBuilder } from "./builders/use-form-pipeline-builder";
+import { useReactivePipelineBuilder } from "./builders/use-reactive-pipeline-builder";
 import { ComposableBuilder } from "../types/composables/composable-builder";
 
 export function usePipeline<
@@ -23,39 +23,35 @@ export function usePipeline<
   method: Method<TResponse, TArgs>,
   defaultConfig?: ExecutionConfig<TResponse, TArgs>,
 ): Pipeline<TReference, TResponse, TArgs> {
-  const get = usePipelineGetComposable(
+  const get = useGetPipelineBuilder(composableBuilder, method, defaultConfig);
+  const execute = useExecutePipelineBuilder(
     composableBuilder,
     method,
     defaultConfig,
   );
-  const execute = usePipelineExecuteComposable(
-    composableBuilder,
-    method,
-    defaultConfig,
-  );
-  const status = usePipelineStatusComposable(
+  const status = useStatusPipelineBuilder(
     composableBuilder,
     method,
     defaultConfig,
   );
 
   if (isMethodWithParameters(method)) {
-    const reactive = usePipelineReactiveComposable(
+    const reactive = useReactivePipelineBuilder(
       composableBuilder,
       method,
       defaultConfig,
     );
-    const value = usePipelineValueComposable(
+    const value = useValuePipelineBuilder(
       composableBuilder,
       method,
       defaultConfig,
     );
-    const form = usePipelineFormComposable(
+    const form = useFormPipelineBuilder(
       composableBuilder,
       method,
       defaultConfig,
     );
-    const values = usePipelineValuesComposable(
+    const values = useValuesPipelineBuilder(
       composableBuilder,
       method,
       defaultConfig,

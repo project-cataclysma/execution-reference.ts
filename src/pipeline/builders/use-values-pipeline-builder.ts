@@ -6,7 +6,7 @@ import {
 } from "../../types";
 import { useValuesComposable } from "../../composables";
 
-export function usePipelineValuesComposable<
+export function useValuesPipelineBuilder<
   TReference extends ExecutionReference<TResponse, [...pi: TPI, ...pf: TPF]>,
   TResponse,
   TPI extends unknown[],

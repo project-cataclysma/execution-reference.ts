@@ -6,7 +6,7 @@ import {
   Method,
 } from "../../types";
 
-export function usePipelineExecuteComposable<
+export function useExecutePipelineBuilder<
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,
   TArgs extends unknown[],

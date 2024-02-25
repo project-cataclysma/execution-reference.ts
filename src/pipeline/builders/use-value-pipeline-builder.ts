@@ -3,7 +3,7 @@ import { PipelineValueComposable } from "../../types/pipeline/pipeline-value-com
 import { usePipeline } from "../use-pipeline";
 import { ComposableBuilder } from "../../types/composables/composable-builder";
 
-export function usePipelineValueComposable<
+export function useValuePipelineBuilder<
   TReference extends ExecutionReference<TResponse, PN>,
   TResponse,
   P1,

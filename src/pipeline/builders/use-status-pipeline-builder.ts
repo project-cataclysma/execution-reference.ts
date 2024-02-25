@@ -7,7 +7,7 @@ import {
   StatusConfig,
 } from "../../types";
 
-export function usePipelineStatusComposable<
+export function useStatusPipelineBuilder<
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,
   TArgs extends unknown[],
