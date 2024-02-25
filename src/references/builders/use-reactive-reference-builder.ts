@@ -4,9 +4,9 @@ import {
   Method,
   ExecutionReference,
   ExecutionConfig,
-} from "../types";
+} from "../../types";
 
-export function useReactiveReference<
+export function useReactiveReferenceBuilder<
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,
   TArg,

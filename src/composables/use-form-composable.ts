@@ -1,4 +1,4 @@
-import { useFormReference } from "../references";
+import { useFormReferenceBuilder } from "../references";
 import { ComposableBuilder, ExecutionComposable } from "../types";
 import { ExecutionConfig } from "../types/configs";
 import { Method } from "../types/method";
@@ -17,7 +17,7 @@ export function useFormComposable<
   initialValue: TArg,
 ): ExecutionComposable<TResponse, TArgs> {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs, TError>>) =>
-    useFormReference(
+    useFormReferenceBuilder(
       composableBuilder,
       method,
       {

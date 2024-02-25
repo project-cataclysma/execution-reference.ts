@@ -1,4 +1,4 @@
-import { useValuesReference } from "../references";
+import { useValuesReferenceBuilder } from "../references";
 import { ExecutionComposable } from "../types";
 import { ComposableBuilder } from "../types/composables/composable-builder";
 import { ExecutionConfig } from "../types/configs";
@@ -18,7 +18,7 @@ export function useValuesComposable<
   ...arg: TArg
 ): ExecutionComposable<TResponse, TArgs> {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs, TError>>) =>
-    useValuesReference(
+    useValuesReferenceBuilder(
       composableBuilder,
       method,
       {

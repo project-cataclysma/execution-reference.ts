@@ -1,5 +1,5 @@
 import { MaybeRef } from "vue";
-import { useReactiveReference } from "../references";
+import { useReactiveReferenceBuilder } from "../references";
 import { ComposableBuilder, ExecutionComposable } from "../types";
 import { ExecutionConfig } from "../types/configs";
 import { Method } from "../types/method";
@@ -18,7 +18,7 @@ export function useReactiveComposable<
   arg: MaybeRef<TArg>,
 ): ExecutionComposable<TResponse, TArgs> {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs, TError>>) =>
-    useReactiveReference(
+    useReactiveReferenceBuilder(
       composableBuilder,
       method,
       {

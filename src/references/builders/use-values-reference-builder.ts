@@ -5,7 +5,7 @@ import {
   ExecutionConfig,
 } from "../../types";
 
-export function useValuesReference<
+export function useValuesReferenceBuilder<
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,
   TArg extends unknown[],

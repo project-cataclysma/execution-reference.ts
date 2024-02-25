@@ -15,7 +15,7 @@ import {
  * @param configuration
  * @param args
  */
-export function useExecuteReference<
+export function useExecuteReferenceBuilder<
   TReference extends ExecutionReference<TResponse, []>,
   TResponse,
   TArgs extends unknown[],

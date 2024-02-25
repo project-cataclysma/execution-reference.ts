@@ -7,7 +7,7 @@ import {
   FormReference,
 } from "../../types";
 
-export function useFormReference<
+export function useFormReferenceBuilder<
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,
   TArg,

@@ -1,7 +1,7 @@
 import { ExecutionConfig } from "../types/configs";
 import { ComposableBuilder, ExecuteComposable } from "../types/composables";
 import { Method } from "../types/method";
-import { useExecuteReference } from "../references/builders/use-execute-reference-builder";
+import { useExecuteReferenceBuilder } from "../references/builders/use-execute-reference-builder";
 import { ExecutionReference } from "../types/references";
 
 export function useExecuteComposable<
@@ -15,5 +15,5 @@ export function useExecuteComposable<
   config: TConfig,
 ): ExecuteComposable<TResponse, TArgs> {
   return (...args: TArgs) =>
-    useExecuteReference(composableBuilder, method, config, ...args);
+    useExecuteReferenceBuilder(composableBuilder, method, config, ...args);
 }
