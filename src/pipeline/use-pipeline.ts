@@ -5,13 +5,13 @@ import {
   Pipeline,
 } from "../types";
 import { isMethodWithParameters } from "../types/method/method-with-parameters";
-import { usePipelineValuesComposable } from "./pipeline-builders/use-values-pipeline-builder";
-import { usePipelineExecuteComposable } from "./pipeline-builders/use-execute-pipeline-builder";
-import { usePipelineStatusComposable } from "./pipeline-builders/use-status-pipeline-builder";
-import { usePipelineGetComposable } from "./pipeline-builders/use-get-pipeline-builder";
-import { usePipelineValueComposable } from "./pipeline-builders/use-value-pipeline-builder";
-import { usePipelineFormComposable } from "./pipeline-builders/use-form-pipeline-builder";
-import { usePipelineReactiveComposable } from "./pipeline-builders/use-reactive-pipeline-builder";
+import { usePipelineValuesComposable } from "./builders/use-values-pipeline-builder";
+import { usePipelineExecuteComposable } from "./builders/use-execute-pipeline-builder";
+import { usePipelineStatusComposable } from "./builders/use-status-pipeline-builder";
+import { usePipelineGetComposable } from "./builders/use-get-pipeline-builder";
+import { usePipelineValueComposable } from "./builders/use-value-pipeline-builder";
+import { usePipelineFormComposable } from "./builders/use-form-pipeline-builder";
+import { usePipelineReactiveComposable } from "./builders/use-reactive-pipeline-builder";
 import { ComposableBuilder } from "../types/composables/composable-builder";
 
 export function usePipeline<
