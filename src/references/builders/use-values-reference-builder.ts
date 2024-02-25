@@ -3,7 +3,7 @@ import {
   Method,
   ExecutionReference,
   ExecutionConfig,
-} from "../types";
+} from "../../types";
 
 export function useValuesReference<
   TReference extends ExecutionReference<TResponse, TArgs>,

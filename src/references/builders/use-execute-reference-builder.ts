@@ -4,7 +4,7 @@ import {
   Method,
   ExecutionReference,
   ExecutionConfig,
-} from "../types";
+} from "../../types";
 
 /**
  * NOTE, this composable is not the same as the useExecutionReference
