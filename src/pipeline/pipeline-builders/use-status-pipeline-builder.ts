@@ -1,11 +1,11 @@
-import { useStatusComposable } from "../composables";
+import { useStatusComposable } from "../../composables";
 import {
   ComposableBuilder,
   ExecutionConfig,
   ExecutionReference,
   Method,
   StatusConfig,
-} from "../types";
+} from "../../types";
 
 export function usePipelineStatusComposable<
   TReference extends ExecutionReference<TResponse, TArgs>,

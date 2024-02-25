@@ -1,7 +1,7 @@
-import { ExecutionConfig, ExecutionReference, Method } from "../types";
-import { PipelineValueComposable } from "../types/pipeline/pipeline-value-composable";
-import { usePipeline } from ".";
-import { ComposableBuilder } from "../types/composables/composable-builder";
+import { ExecutionConfig, ExecutionReference, Method } from "../../types";
+import { PipelineValueComposable } from "../../types/pipeline/pipeline-value-composable";
+import { usePipeline } from "../use-pipeline";
+import { ComposableBuilder } from "../../types/composables/composable-builder";
 
 export function usePipelineValueComposable<
   TReference extends ExecutionReference<TResponse, PN>,

@@ -4,9 +4,9 @@ import {
   ExecutionConfig,
   ExecutionReference,
   Method,
-} from "../types";
-import { PipelineValueComposable } from "../types/pipeline/pipeline-value-composable";
-import { usePipeline } from ".";
+} from "../../types";
+import { PipelineValueComposable } from "../../types/pipeline/pipeline-value-composable";
+import { usePipeline } from "../use-pipeline";
 
 export function usePipelineReactiveComposable<
   TReference extends ExecutionReference<TResponse, PN>,

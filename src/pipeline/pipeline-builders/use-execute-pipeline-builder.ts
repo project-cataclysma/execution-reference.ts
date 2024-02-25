@@ -1,10 +1,10 @@
-import { useExecuteComposable } from "../composables";
+import { useExecuteComposable } from "../../composables";
 import {
   ComposableBuilder,
   ExecutionConfig,
   ExecutionReference,
   Method,
-} from "../types";
+} from "../../types";
 
 export function usePipelineExecuteComposable<
   TReference extends ExecutionReference<TResponse, TArgs>,
@@ -16,5 +16,8 @@ export function usePipelineExecuteComposable<
   defaultConfig?: ExecutionConfig<TResponse, TArgs>,
 ) {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs>>) =>
-    useExecuteComposable(composableBuilder, method, { ...defaultConfig, ...config });
+    useExecuteComposable(composableBuilder, method, {
+      ...defaultConfig,
+      ...config,
+    });
 }

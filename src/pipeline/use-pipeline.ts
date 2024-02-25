@@ -5,13 +5,13 @@ import {
   Pipeline,
 } from "../types";
 import { isMethodWithParameters } from "../types/method/method-with-parameters";
-import { usePipelineValuesComposable } from "./use-pipeline-values-composable";
-import { usePipelineExecuteComposable } from "./use-pipeline-execute-composable";
-import { usePipelineStatusComposable } from "./use-pipeline-status-composable";
-import { usePipelineGetComposable } from "./use-pipeline-get-composable";
-import { usePipelineValueComposable } from "./use-pipeline-value-composable";
-import { usePipelineFormComposable } from "./use-pipeline-form-composable";
-import { usePipelineReactiveComposable } from "./use-pipeline-reactive-composable";
+import { usePipelineValuesComposable } from "./pipeline-builders/use-values-pipeline-builder";
+import { usePipelineExecuteComposable } from "./pipeline-builders/use-execute-pipeline-builder";
+import { usePipelineStatusComposable } from "./pipeline-builders/use-status-pipeline-builder";
+import { usePipelineGetComposable } from "./pipeline-builders/use-get-pipeline-builder";
+import { usePipelineValueComposable } from "./pipeline-builders/use-value-pipeline-builder";
+import { usePipelineFormComposable } from "./pipeline-builders/use-form-pipeline-builder";
+import { usePipelineReactiveComposable } from "./pipeline-builders/use-reactive-pipeline-builder";
 import { ComposableBuilder } from "../types/composables/composable-builder";
 
 export function usePipeline<
@@ -23,7 +23,11 @@ export function usePipeline<
   method: Method<TResponse, TArgs>,
   defaultConfig?: ExecutionConfig<TResponse, TArgs>,
 ): Pipeline<TReference, TResponse, TArgs> {
-  const get = usePipelineGetComposable(composableBuilder, method, defaultConfig);
+  const get = usePipelineGetComposable(
+    composableBuilder,
+    method,
+    defaultConfig,
+  );
   const execute = usePipelineExecuteComposable(
     composableBuilder,
     method,
@@ -46,7 +50,11 @@ export function usePipeline<
       method,
       defaultConfig,
     );
-    const form = usePipelineFormComposable(composableBuilder, method, defaultConfig);
+    const form = usePipelineFormComposable(
+      composableBuilder,
+      method,
+      defaultConfig,
+    );
     const values = usePipelineValuesComposable(
       composableBuilder,
       method,

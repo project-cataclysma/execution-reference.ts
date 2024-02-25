@@ -3,8 +3,8 @@ import {
   ExecutionConfig,
   ExecutionReference,
   ComposableBuilder,
-} from "../types";
-import { useValuesComposable } from "../composables";
+} from "../../types";
+import { useValuesComposable } from "../../composables";
 
 export function usePipelineValuesComposable<
   TReference extends ExecutionReference<TResponse, [...pi: TPI, ...pf: TPF]>,

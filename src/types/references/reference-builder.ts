@@ -6,12 +6,12 @@ import { Method } from "../method";
  */
 export type ReferenceBuilder<
   TReference,
-  TComposable,
+  TReferenceComposable,
   TResponse,
   TArgs extends unknown[],
-  TComposableArgs extends unknown[] = [],
+  TComposableArgs extends unknown[],
 > = (
-  composableBuilder: TComposable,
+  referenceComposable: TReferenceComposable,
   method: Method<TResponse, TArgs>,
   configuration: ExecutionConfig<TResponse, TArgs>,
   ...composableArgs: TComposableArgs

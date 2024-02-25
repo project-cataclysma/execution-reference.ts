@@ -3,7 +3,7 @@ import {
   ExecutionConfig,
   ExecutionReference,
   Method,
-} from "../types";
+} from "../../types";
 
 export function usePipelineGetComposable<
   TReference extends ExecutionReference<TResponse, TArgs>,
