@@ -1,8 +1,8 @@
-import { useStatusReferenceBuilder } from "../references";
-import { ComposableBuilder, StatusComposable } from "../types";
-import { StatusConfig } from "../types/configs";
-import { Method } from "../types/method";
-import { ExecutionReference } from "../types/references";
+import { useStatusReferenceBuilder } from "../../references";
+import { ComposableBuilder, StatusComposable } from "../../types";
+import { StatusConfig } from "../../types/configs";
+import { Method } from "../../types/method";
+import { ExecutionReference } from "../../types/references";
 
 export function useStatusComposable<
   TResult,

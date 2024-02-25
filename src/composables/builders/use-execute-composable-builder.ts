@@ -1,8 +1,8 @@
-import { ExecutionConfig } from "../types/configs";
-import { ComposableBuilder, ExecuteComposable } from "../types/composables";
-import { Method } from "../types/method";
-import { useExecuteReferenceBuilder } from "../references/builders/use-execute-reference-builder";
-import { ExecutionReference } from "../types/references";
+import { ExecutionConfig } from "../../types/configs";
+import { ComposableBuilder, ExecuteComposable } from "../../types/composables";
+import { Method } from "../../types/method";
+import { useExecuteReferenceBuilder } from "../../references/builders/use-execute-reference-builder";
+import { ExecutionReference } from "../../types/references";
 
 export function useExecuteComposable<
   TReference extends ExecutionReference<TResponse, TArgs>,

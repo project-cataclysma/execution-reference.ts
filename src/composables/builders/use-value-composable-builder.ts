@@ -1,11 +1,11 @@
-import { MaybeRef } from "vue";
-import { useReactiveReferenceBuilder } from "../references";
-import { ComposableBuilder, ExecutionComposable } from "../types";
-import { ExecutionConfig } from "../types/configs";
-import { Method } from "../types/method";
-import { ExecutionReference } from "../types/references";
+import { useValueReferenceBuilder } from "../../references";
+import { ExecutionComposable } from "../../types";
+import { ComposableBuilder } from "../../types/composables/composable-builder";
+import { ExecutionConfig } from "../../types/configs";
+import { Method } from "../../types/method";
+import { ExecutionReference } from "../../types/references";
 
-export function useReactiveComposable<
+export function useValueComposable<
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,
   TArg,
@@ -15,10 +15,10 @@ export function useReactiveComposable<
   composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
   method: Method<TResponse, [arg: TArg, ...args: TArgs]>,
   defaultConfig: ExecutionConfig<TResponse, TArgs, TError>,
-  arg: MaybeRef<TArg>,
+  arg: TArg,
 ): ExecutionComposable<TResponse, TArgs> {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs, TError>>) =>
-    useReactiveReferenceBuilder(
+    useValueReferenceBuilder(
       composableBuilder,
       method,
       {

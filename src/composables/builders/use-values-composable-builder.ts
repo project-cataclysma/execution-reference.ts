@@ -1,9 +1,9 @@
-import { useValuesReferenceBuilder } from "../references";
-import { ExecutionComposable } from "../types";
-import { ComposableBuilder } from "../types/composables/composable-builder";
-import { ExecutionConfig } from "../types/configs";
-import { Method } from "../types/method";
-import { ExecutionReference } from "../types/references";
+import { useValuesReferenceBuilder } from "../../references";
+import { ExecutionComposable } from "../../types";
+import { ComposableBuilder } from "../../types/composables/composable-builder";
+import { ExecutionConfig } from "../../types/configs";
+import { Method } from "../../types/method";
+import { ExecutionReference } from "../../types/references";
 
 export function useValuesComposable<
   TReference extends ExecutionReference<TResponse, TArgs>,
