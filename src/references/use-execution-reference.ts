@@ -3,6 +3,14 @@ import { Ref, computed, ref } from "vue";
 import { ExecutionConfig } from "../types/configs";
 import { ExecutionReference } from "../types/references/execution-reference";
 
+/**
+ * This is an Execution Reference Composable, the base form of ExecutionReferenceComposables
+ *
+ * Executing this composable will create an ExecutionReference, providing metadata about the execution of a Promise.
+ * The Composable Configuration can be used to inject hooks for events during the composable's different states.
+ * @param method The Method to track
+ * @param configuration Composable Configuration
+ */
 export function useExecutionReference<TResponse, TArgs extends unknown[]>(
   method: Method<TResponse, TArgs>,
   configuration?: ExecutionConfig<TResponse, TArgs>,
