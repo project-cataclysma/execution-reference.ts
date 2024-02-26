@@ -1,7 +1,7 @@
 import { ExecutionConfig } from "../../types/configs";
 import { ComposableBuilder, ExecuteComposable } from "../../types/composables";
 import { Method } from "../../types/method";
-import { useExecuteReferenceBuilder } from "../../references/builders/use-execute-reference-builder";
+import { useExecuteReferenceBuilder } from "../../references/transforms/use-execute-reference-transform";
 import { ExecutionReference } from "../../types/references";
 
 export function useExecuteComposable<
