@@ -1,4 +1,4 @@
-import { useExecuteComposable } from "../../composables";
+import { useExecuteComposable } from "../../reference-composable-builders";
 import {
   ComposableBuilder,
   ExecutionConfig,

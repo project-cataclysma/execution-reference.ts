@@ -1,29 +1,30 @@
-import { useFormReferenceBuilder } from "../../references";
-import { ComposableBuilder, ExecutionComposable } from "../../types";
+import { useValuesReferenceBuilder } from "../../reference-composables";
+import { ExecutionComposable } from "../../types";
+import { ComposableBuilder } from "../../types/composables/composable-builder";
 import { ExecutionConfig } from "../../types/configs";
 import { Method } from "../../types/method";
 import { ExecutionReference } from "../../types/references";
 
-export function useFormComposable<
+export function useValuesComposable<
   TReference extends ExecutionReference<TResponse, TArgs>,
   TResponse,
-  TArg,
+  TArg extends unknown[],
   TArgs extends unknown[],
   TError extends Error,
 >(
   composableBuilder: ComposableBuilder<TReference, TResponse, TArgs>,
-  method: Method<TResponse, [arg: TArg, ...args: TArgs]>,
+  method: Method<TResponse, [...arg: TArg, ...args: TArgs]>,
   defaultConfig: ExecutionConfig<TResponse, TArgs, TError>,
-  initialValue: TArg,
+  ...arg: TArg
 ): ExecutionComposable<TResponse, TArgs> {
   return (config?: Partial<ExecutionConfig<TResponse, TArgs, TError>>) =>
-    useFormReferenceBuilder(
+    useValuesReferenceBuilder(
       composableBuilder,
       method,
       {
         ...defaultConfig,
         ...config,
       },
-      initialValue,
+      ...arg,
     );
 }

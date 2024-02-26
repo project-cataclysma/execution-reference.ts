@@ -1,4 +1,4 @@
-import { useStatusReferenceBuilder } from "../../references";
+import { useStatusReferenceBuilder } from "../../reference-composables";
 import { ComposableBuilder, StatusComposable } from "../../types";
 import { StatusConfig } from "../../types/configs";
 import { Method } from "../../types/method";

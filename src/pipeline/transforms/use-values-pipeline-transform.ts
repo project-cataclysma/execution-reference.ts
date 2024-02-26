@@ -4,7 +4,7 @@ import {
   ExecutionReference,
   ComposableBuilder,
 } from "../../types";
-import { useValuesComposable } from "../../composables";
+import { useValuesComposable } from "../../reference-composable-builders";
 
 export function useValuesPipelineBuilder<
   TReference extends ExecutionReference<TResponse, [...pi: TPI, ...pf: TPF]>,

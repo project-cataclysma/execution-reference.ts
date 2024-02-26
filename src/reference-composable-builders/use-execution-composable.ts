@@ -1,4 +1,4 @@
-import { useExecutionReference } from "../references";
+import { useExecutionReference } from "../reference-composables";
 import { ExecutionConfig } from "../types/configs";
 import { ExecutionComposable } from "../types/composables";
 import { Method } from "../types/method";
